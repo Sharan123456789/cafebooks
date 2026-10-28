@@ -1,0 +1,46 @@
+# --- Claude Code files: local only, never pushed ---
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# --- Business data: lives in the database / on the shop PC, never in git ---
+data/
+backups/
+exports/
+staging/
+attachments/
+logs/
+legacy_excel_data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite3
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Desktop build outputs (PyInstaller / Inno Setup) ---
+build/
+dist/
+installer_output/
+
+# --- Vercel ---
+.vercel/
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

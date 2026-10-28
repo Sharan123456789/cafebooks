@@ -1,0 +1,6 @@
+# Tests.  pgserver is optional: it starts a throwaway PostgreSQL so tests also run against
+# PostgreSQL locally (or set CAFEBOOKS_TEST_POSTGRES_URL to any server instead).
+-r requirements.txt
+pytest>=8.0
+httpx>=0.27
+pgserver>=0.1.4

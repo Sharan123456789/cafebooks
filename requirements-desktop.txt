@@ -1,0 +1,4 @@
+# Standalone desktop app (own window) and building the Windows .exe.
+-r requirements.txt
+pywebview>=5.0
+pyinstaller>=6.0

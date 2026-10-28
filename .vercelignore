@@ -1,0 +1,23 @@
+# Never upload local business data, builds or tooling to Vercel.
+.claude/
+CLAUDE.md
+.env
+.env.*
+.venv/
+venv/
+data/
+backups/
+exports/
+staging/
+attachments/
+logs/
+legacy_excel_data/
+build/
+dist/
+installer_output/
+packaging/
+tests/
+docs/
+*.db
+*.db-*
+**/__pycache__/

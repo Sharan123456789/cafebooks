@@ -1,0 +1,36 @@
+; Inno Setup script for the CafeBooks desktop app.
+; Build dist\CafeBooks first (see CafeBooks.spec), then compile this file with Inno Setup.
+; Business data is stored in %LOCALAPPDATA%\CafeBooks, so reinstalling or uninstalling keeps it.
+
+#define MyAppName "CafeBooks"
+#define MyAppVersion "15.0.0"
+#define MyAppPublisher "CafeBooks"
+#define MyAppExeName "CafeBooks.exe"
+
+[Setup]
+AppId={{9F98C4C1-5A27-4D90-A7E2-6C81E3D4A101}
+AppName={#MyAppName}
+AppVersion={#MyAppVersion}
+AppPublisher={#MyAppPublisher}
+DefaultDirName={localappdata}\Programs\CafeBooks
+DefaultGroupName=CafeBooks
+UninstallDisplayIcon={app}\{#MyAppExeName}
+OutputDir=..\installer_output
+OutputBaseFilename=CafeBooks_Setup
+Compression=lzma2
+SolidCompression=yes
+WizardStyle=modern
+PrivilegesRequired=lowest
+
+[Tasks]
+Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"
+
+[Files]
+Source: "..\dist\CafeBooks\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+[Icons]
+Name: "{group}\CafeBooks"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"
+Name: "{autodesktop}\CafeBooks"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"; Tasks: desktopicon
+
+[Run]
+Filename: "{app}\{#MyAppExeName}"; Description: "Launch CafeBooks"; Flags: postinstall nowait skipifsilent
