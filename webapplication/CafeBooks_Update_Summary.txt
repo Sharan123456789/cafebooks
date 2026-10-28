@@ -1,0 +1,29 @@
+CafeBooks Project — Version 14 Update Summary
+
+Changes in this version
+- Settings action buttons now use a balanced, evenly spaced two-row grid; Excel Snapshot no longer sits awkwardly in a crowded single row.
+- Integrity Check now opens a persistent result window immediately, shows a running status, and displays errors/warnings or a clear success result. If checking fails unexpectedly, the window shows the exception instead of silently disappearing.
+- Demo workbook expanded to cover vendors, purchase bills, supplier payments, allocations, daily sales, sales adjustments, tips and service charges.
+- Demo enum values and linked IDs corrected; cash collections and ledger values reconciled so the demo passes the dataset validator and sales reconciliation without errors or warnings.
+- Existing charcoal-and-gold theme and app structure retained.
+
+Validation performed
+- Python compileall: passed.
+- Core and sales/tips tests: 32 passed.
+- Integrity reliability test: 1 passed.
+- Direct import simulation into an isolated ExcelManager: passed.
+- Demo workbook dataset validation: 0 issues.
+- Demo workbook accounting reconciliation: 0 errors/warnings.
+- Full reliability test file was attempted but exceeded the available run time; remaining reliability tests and live Windows GUI checks are not claimed as passed.
+
+Demo workbook
+- File: demo_data/CafeBooks_Demo_Data.xlsx (also supplied separately as CafeBooks_Demo_Data_v14.xlsx).
+- Contains synthetic sample records dated 1–3 October 2026.
+- Importing a workbook replaces the represented tables. Back up real business data before importing. The source workbook itself is not modified.
+
+Next steps
+1. Extract CafeBooks_Project_v14.zip into a separate folder and keep the prior version as backup.
+2. Open Settings and verify the two-row action grid and Excel Snapshot spacing.
+3. Open Integrity Check and confirm the results window remains open and reports status.
+4. Import CafeBooks_Demo_Data_v14.xlsx in a test data folder and confirm the dashboard and all sections show populated data with a clean integrity status.
+5. Run the full regression suite and live GUI checks on Windows before using with production records.
